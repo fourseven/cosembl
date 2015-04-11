@@ -15,6 +15,10 @@ Template.ideaItem.helpers({
 Template.ideaItem.events({
   'click .upvotable': function(e) {
     e.preventDefault();
-    Meteor.call('upvote', this._id);
+    Meteor.call('Ideas.upvote', this._id);
+  },
+  'click [data-action="start-conversation"]': function (e) {
+    e.preventDefault();
+    Meteor.call('Conversation.start', this.userId);
   }
 });
