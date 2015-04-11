@@ -38,10 +38,12 @@
       </div>
       <div class="col-md-6">
         {{ #if currentUser }}
-          {{ #if myIdeas.count }}
-          <h2>Thanks for submitting an idea, check back soon!</h2>
-          {{ else }}
-            {{> ideaSubmit }}
+          {{ #if myIdeasReady }}
+            {{ #if myIdeas }}
+            <h2>Thanks for submitting an idea, check back soon!</h2>
+            {{ else }}
+              {{> ideaSubmit }}
+            {{ /if }}
           {{ /if }}
         {{ else}}
           {{> atForm state='signUp'}}

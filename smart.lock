@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "fast-render": {}
+    },
+    "packages": {
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v1.0.0",
+        "commit": "acbc04982025fe78cebb8865b5a04689741d4b0b"
+      }
+    }
+  }
+}
