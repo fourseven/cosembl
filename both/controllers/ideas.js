@@ -1,25 +1,6 @@
-// IdeasListController = AppController.extend({
-//   waitOn: function() {
-//     return Meteor.subscribe('ideas');
-//   },
-//   data: {
-//     ideas: Ideas.find({})
-//   },
-//   onAfterAction: function () {
-//     Meta.setTitle('Ideas');
-//   },
-//   fastRender: true
-// });
-
-// IdeasListController.events({
-//   'click [data-action=doSomething]': function (event, template) {
-//     event.preventDefault();
-//   }
-// });
-
 IdeasListController = AppController.extend({
   template: 'ideasList',
-  increment: 5,
+  increment: 25,
   ideasLimit: function() {
     return parseInt(this.params.ideasLimit) || this.increment;
   },
