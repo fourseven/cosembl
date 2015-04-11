@@ -1,0 +1,12 @@
+<template name="ideaSubmit">
+  <form class="main form">
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label" for="title">What's your business idea?</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="" placeholder="E.g. I want a tinder for local pets" class="form-control"/>
+          <span class="help-block">{{errorMessage 'title'}}</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary"/>
+  </form>
+</template>

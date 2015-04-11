@@ -1,18 +1,34 @@
+var accountsTemplate = 'marketingLayout';
+var afterSignInPath = '/';
+
 AccountsTemplates.configureRoute('signIn', {
-  layoutTemplate: 'appLayout',
+  layoutTemplate: accountsTemplate,
   redirect: function() {
     var user = Meteor.user();
-    if (user)
-      Router.go('/dashboard');
+
+    if (user) Router.go(afterSignInPath);
   }
 });
-AccountsTemplates.configureRoute('signUp', {layoutTemplate: 'appLayout'});
-AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: 'appLayout'});
+AccountsTemplates.configureRoute('signUp', {
+  layoutTemplate: accountsTemplate,
+  redirect: function() {
+    var user = Meteor.user();
+    var idea = user.profile.idea;
+    delete user.profile.idea;
+    if (idea) {
+      Meteor.call('Ideas.insert', {title: idea});
+    }
+
+    if (user) Router.go(afterSignInPath);
+  }
+});
+AccountsTemplates.configureRoute('ensureSignedIn', {layoutTemplate: accountsTemplate});
 
 AccountsTemplates.removeField('email');
 AccountsTemplates.removeField('password');
 
 AccountsTemplates.configure({
+  defaultLayout: accountsTemplate,
   confirmPassword: false,
   onLogoutHook: function() {
     Router.go('/');
@@ -42,7 +58,7 @@ AccountsTemplates.addField({
     type: 'password',
     required: true,
     minLength: 6,
-    errStr: 'At least 6 characters or more',
+    errStr: 'At least 6 characters or more'
 });
 
 AccountsTemplates.addField({
@@ -59,6 +75,14 @@ AccountsTemplates.addField({
     }, {
       text: "A Developer",
       value: "developer",
-    },
-  ],
+    }
+  ]
 });
+
+AccountsTemplates.addField({
+    _id: 'idea',
+    type: 'text',
+    displayName: "What's your business idea?",
+    placeholder: "E.g. I want a tinder for local pets"
+});
+

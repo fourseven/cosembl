@@ -1,17 +1,52 @@
 <template name="home">
   <div class="template-home">
     <div class="page-header">
-      <img src="/images/marketing/logo-large.png">
+      <img class="logo-large" src="/images/marketing/logo-large.png">
       <h1>Connecting people with ideas with people</h1>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-        {{#unless currentUser}}
-          <div class="signup-links">
-            <a href="{{ pathFor 'atSignIn' }}" class="btn btn-default navbar-btn">Sign in</a>
-            <a href="{{ pathFor 'atSignUp' }}" class="btn btn-primary navbar-btn">Register</a>
-          </div>
-        {{/unless}}
+    <div class="row">
+      <div class="col-md-6 call-to-action">
+      <br />
+      <p>
+        Hey.
+      </p>
+      <p>
+        You with the ideas.
+        <br />
+        You with the skills.
+      </p>
+      <p>
+        I know you've got a big stack of sweet ideas.
+      </p>
+      <p>
+        But you're busy!
+        <br />
+        You can't make them happen on your own...
+      </p>
+      <p>
+        Bring them here.
+        <br />
+        Watch them attract collaborators.
+        <br />
+        Like moths to the flame.
+      </p>
+      <p>
+        Then grow them,
+        <br />
+        With your <b>Moth empire!</b>
+      </p>
+      </div>
+      <div class="col-md-6">
+        {{ #if currentUser }}
+          {{ #if myIdeas.count }}
+          <h2>Thanks for submitting an idea, check back soon!</h2>
+          {{ else }}
+            {{> ideaSubmit }}
+          {{ /if }}
+        {{ else}}
+          {{> atForm state='signUp'}}
+        {{/if}}
+      </div>
+    </div>
   </div>
 </template>

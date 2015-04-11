@@ -1,4 +1,4 @@
-Items.allow({
+Ideas.allow({
   'insert': function(userId, doc) {
     return userId;
   },

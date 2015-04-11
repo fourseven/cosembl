@@ -1,7 +1,7 @@
-Meteor.publishComposite("items", function() {
+Meteor.publishComposite("ideas", function() {
   return {
     find: function() {
-      return Items.find({});
+      return Ideas.find({});
     }
     // ,
     // children: [
@@ -13,3 +13,7 @@ Meteor.publishComposite("items", function() {
     // ]
   }
 });
+
+Meteor.publish('userIdeas', function() {
+  return Ideas.find({userId: this.userId});
+})

@@ -1,3 +1,5 @@
-Template.home.rendered = function() {
-
-};
+Template.home.helpers({
+  myIdeas: function() {
+    return Ideas.find({userId: Meteor.userId()});
+  }
+})
