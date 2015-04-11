@@ -1,8 +1,12 @@
 @import '../base/mixins.import.less';
 @import '../base/variables.import.less';
 
-html, body, .body-container {
+html, body {
   height: 100%;
+}
+
+.body-container {
+  min-height: 100%;
 }
 
 .navbar {
@@ -18,10 +22,19 @@ html, body, .body-container {
 }
 
 footer {
-  background: FE7C44;
+  background: #FF9565;
+  .container {
+    background: #FF9565;
+  }
 }
 
-.body-container, footer {
+.at-form {
+  h3, label, p, button {
+    color: #4D4D4D;
+  }
+}
+
+.body-container {
   width: 100%;
   background: #fe7c44; /* Old browsers */
   background: -moz-linear-gradient(top,  #fe7c44 0%, #fe956a 100%); /* FF3.6+ */
