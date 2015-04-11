@@ -2,10 +2,10 @@ Router.route('/', {
   name: 'home'
 });
 
-Router.route('/dashboard', {
-  name: 'dashboard'
+Router.route('/ideas', {
+  name: 'ideasList'
 });
 
 Router.plugin('ensureSignedIn', {
-    except: ['home', 'atSignIn', 'atSignUp', 'atForgotPassword']
+  except: ['home', 'atSignIn', 'atSignUp', 'atForgotPassword']
 });

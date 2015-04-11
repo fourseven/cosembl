@@ -1,0 +1,14 @@
+<template name="ideasList">
+  <div class="template-ideas-list">
+    <div class="page-header">
+      <h1>Dashboard</h1>
+    </div>
+
+    <ul class="list-group">
+      {{#each ideas}}
+        <li class="list-group-item">{{ title }} <span class="label label-default pull-right">By: {{ author }}</span></li>
+      {{/each}}
+    </ul>
+
+  </div>
+</template>
