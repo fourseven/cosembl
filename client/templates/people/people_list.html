@@ -1,0 +1,22 @@
+<template name="peopleList">
+  <div class="template-ideas-list">
+    <div class="page-header">
+      <h1>Dashboard</h1>
+    </div>
+
+    <ul class="list-group">
+      {{#each people}}
+        <li class="list-group-item">{{ profile.name }}</li>
+      {{/each}}
+    </ul>
+
+    {{#if nextPath}}
+      <a class="load-more" href="{{nextPath}}">Load more</a>
+    {{else}}
+      {{#unless ready}}
+        {{> spinner}}
+      {{/unless}}
+    {{/if}}
+
+  </div>
+</template>

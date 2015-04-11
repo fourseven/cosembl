@@ -17,7 +17,6 @@
 //   }
 // });
 
-
 IdeasListController = AppController.extend({
   template: 'ideasList',
   increment: 5,
@@ -43,8 +42,7 @@ IdeasListController = AppController.extend({
   },
   onAfterAction: function () {
     Meta.setTitle('Ideas');
-  },
-  fastRender: true
+  }
 });
 
 NewIdeasController = IdeasListController.extend({
@@ -52,15 +50,23 @@ NewIdeasController = IdeasListController.extend({
   nextPath: function() {
     return Router.routes.newIdeas.path({ideasLimit: this.ideasLimit() + this.increment});
   }
-})
+});
 
 BestIdeasController = IdeasListController.extend({
   sort: {votes: -1, submitted: -1, _id: -1},
   nextPath: function() {
     return Router.routes.bestIdeas.path({ideasLimit: this.ideasLimit() + this.increment});
   }
-})
+});
 
-Router.route('/new/:ideasLimit?', {name: 'newIdeas'});
+Router.route('/ideas', function() {
+  this.redirect('/ideas/best/');
+});
 
-Router.route('/best/:ideasLimit?', {name: 'bestIdeas'});
+Router.route('/ideas/new/:ideasLimit?', {
+  name: 'newIdeas'
+});
+
+Router.route('/ideas/best/:ideasLimit?', {
+  name: 'bestIdeas'
+});

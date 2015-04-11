@@ -27,10 +27,16 @@
             </li>
           </ul>
           <ul class="header-tabs nav navbar-nav navbar-right">
-            <li class="selected"><a class="navbar-brand" href="#">Ideas</a></li>
-            <li><a class="navbar-brand" href="#">People</a></li>
-            <li><a class="navbar-brand" href="#">Projects</a></li>
-            <li><a class="navbar-brand" href="#">Profile</a></li>
+            <li class="{{activeRouteClass 'bestIdeas' 'newIdeas'}}"><a class="navbar-brand" href="{{ pathFor 'bestIdeas' }}">Ideas</a></li>
+            <li class="{{activeRouteClass 'peopleList'}}">
+              <a class="navbar-brand" href="{{ pathFor 'peopleList' }}">People</a>
+            </li>
+            <li class="{{activeRouteClass 'projectList'}}">
+              <a class="navbar-brand" href="#">Projects</a>
+            </li>
+            <li class="{{activeRouteClass 'profilePage'}}">
+              <a class="navbar-brand" href="#">Profile</a>
+            </li>
           </ul>
         {{else}}
           <div class="navbar-right">
