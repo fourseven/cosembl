@@ -1,0 +1,35 @@
+#spinner {
+  height: 300px; }
+
+.idea {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  position: relative;
+  opacity: 1;
+}
+.idea:before, .idea:after {
+  content: "";
+  display: table;
+}
+.idea:after {
+  clear: both;
+}
+.idea.invisible {
+  opacity: 0;
+}
+.idea.instant {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+.idea.animate{
+  -webkit-transition: all 300ms 0ms;
+  -moz-transition: all 300ms 0ms ease-in;
+  -o-transition: all 300ms 0ms ease-in;
+  transition: all 300ms 0ms ease-in; }
+.idea .upvote {
+  display: block;
+  margin: 7px 12px 0 0;
+  float: left; }

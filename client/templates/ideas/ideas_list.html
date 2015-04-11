@@ -4,11 +4,13 @@
       <h1>Dashboard</h1>
     </div>
 
-    <ul class="list-group">
-      {{#each ideas}}
-        <li class="list-group-item">{{ title }} <span class="label label-default pull-right">By: {{ author }}</span></li>
-      {{/each}}
-    </ul>
+    <div class="list-group">
+      <div class="wrapper">
+        {{#each ideas}}
+          {{> ideaItem}}
+        {{/each}}
+      </div>
+    </div>
 
     {{#if nextPath}}
       <a class="load-more" href="{{nextPath}}">Load more</a>
