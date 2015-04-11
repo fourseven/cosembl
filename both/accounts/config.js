@@ -39,7 +39,8 @@ AccountsTemplates.addFields([
   {
       _id: "name",
       type: "text",
-      displayName: "Name",
+      displayName: "Full name",
+      placeholder: "First name + last name",
       required: true,
       minLength: 5,
   },
