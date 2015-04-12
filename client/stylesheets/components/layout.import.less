@@ -30,7 +30,7 @@ footer {
 
 .at-form {
   h3, label, p, button {
-    color: #4D4D4D;
+    color: @brand-grey;
   }
 }
 
@@ -44,4 +44,45 @@ footer {
   background: -ms-linear-gradient(top,  #fe7c44 0%,#fe956a 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #fe7c44 0%,#fe956a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe7c44', endColorstr='#fe956a',GradientType=0 ); /* IE6-9 */
+}
+
+div.item-box {
+  width: 100%;
+  border: 1px solid white;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px;
+
+    .search-box input {
+      width: 100%;
+    }
+
+  div.item-title {
+    border-bottom: 1px solid @brand-primary;
+    margin: 0 -11px;
+    span {
+      font-weight: bold;
+      padding-bottom: 10px;
+      margin-left: 25px;
+      display: block;
+    }
+  }
+
+  ul {
+    margin-left: 15px;
+    padding: 0;
+    list-style: none;
+    li a {
+      color: @brand-grey;
+    }
+    li.selected a {
+      color: @brand-primary;
+    }
+  }
+}
+
+.body-row {
+  margin-top: 30px;
+  padding: 5px;
 }

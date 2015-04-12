@@ -1,26 +1,47 @@
 <template name="ideasList">
   <div class="template-ideas-list">
-    <div class="page-header">
-      <h1>Dashboard</h1>
-      <a href="{{ pathFor 'newIdeas'}}">Newest ideas</a>
-      <a href="{{ pathFor 'bestIdeas'}}">Top ideas</a>
-    </div>
-
-    <div class="list-group">
-      <div class="wrapper">
-        {{#each ideas}}
-          {{> ideaItem}}
-        {{/each}}
+    <div class='row body-row'>
+      <div class="col-md-2">
+        <div class='item-box'>
+          <div class='item-title'><span>Filter By</span></div>
+          <ul class='item-list'>
+            <li class="selected"><a href="{{ pathFor 'bestIdeas'}}">Most Popular</a></li>
+            <li><a href="{{ pathFor 'newIdeas'}}">Most Recent</a></li>
+            <li><a href="{{ pathFor 'bestIdeas'}}">In the works</a></li>
+          </ul>
+        </div>
       </div>
+
+      <div class="col-md-6">
+        <div class='item-box'>
+          <div class='search-box'>
+            <input value='Search an Idea'>
+          </div>
+        </div>
+        <div class="list-group item-box">
+          <div class="wrapper">
+            {{#each ideas}}
+              {{> ideaItem}}
+            {{/each}}
+          </div>
+        </div>
+
+        {{#if nextPath}}
+          <a class="load-more" href="{{nextPath}}">Load more</a>
+        {{else}}
+          {{#unless ready}}
+            {{> spinner}}
+          {{/unless}}
+        {{/if}}
+      </div>
+
+      <div class="col-md-4">
+        <div id="ideas-box" class="item-box">
+          <div class='item-title'><span>Post an idea</span></div>
+          {{> ideaSubmit }}
+        </div>
+      </div>
+
     </div>
-
-    {{#if nextPath}}
-      <a class="load-more" href="{{nextPath}}">Load more</a>
-    {{else}}
-      {{#unless ready}}
-        {{> spinner}}
-      {{/unless}}
-    {{/if}}
-
   </div>
 </template>
