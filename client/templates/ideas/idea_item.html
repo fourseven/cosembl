@@ -1,10 +1,17 @@
 <template name="ideaItem">
   <div class="idea">
-    <a href="#" class="upvote btn btn-default {{upvotedClass}}">⬆</a>
-    {{ title }}
-    with
-    {{pluralize votes "vote"}}
-    <span class="label label-default pull-right">By: {{ author }}</span>
-    <a href="#" data-action="start-conversation">Start talking to this person</a>
+    <div class='block idea-blurb'>{{ title }}</div>
+    <div class='block idea-needs'>Developers, Designers, Business people.</div>
+    <div class='block idea-tags'>#socialstandards, #appdesign, #ux</div>
+    <!-- <div>By: {{ author }}</div> -->
+    <!-- <a href="#" data-action="start-conversation">Start talking to this person</a> -->
+    <div class='block item-votes'>
+      <a href="#" class="light upvote {{upvotedClass}}">
+        <span class='votes'>{{votes}}</span>
+      </a>
+      <a href="#" class="star upvote {{upvotedClass}}">
+        <span class='votes'>{{votes}}</span>
+      </a>
+    </div>
   </div>
 </template>
