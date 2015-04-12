@@ -38,19 +38,15 @@ Template.conversationsList.created = function () {
     // get the limit
     var limit = instance.limit.get();
 
-    console.log("Asking for "+limit+" conversations…")
-
     // subscribe to the posts publication
     var subscription = Meteor.subscribe('myConversations', limit);
 
     // if subscription is ready, set limit to newLimit
     if (subscription.ready()) {
-      console.log("> Received "+limit+" conversations. \n\n")
       instance.loaded.set(limit);
       instance.ready.set(true);
     } else {
       instance.ready.set(false);
-      console.log("> Subscription is not ready yet. \n\n");
     }
   });
 
