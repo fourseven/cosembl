@@ -2,7 +2,14 @@
   <div class="conversations">
     {{ #if isReady }}
       {{#each conversations}}
-        {{ conversationIdea.title }}
+      <div class="conversation">
+        <div class="conversation-title">
+          {{ truncate conversationIdea.title 30 }}
+        </div>
+        <div class="conversation-author">
+          {{ conversationAuthor.name }}
+        </div>
+      </div>
       {{/each}}
     {{ else }}
       LOADING CONVERSATIONS

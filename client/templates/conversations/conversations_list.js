@@ -16,6 +16,11 @@ Template.conversationsList.helpers({
     // will be a post object. Thus, we can use this.authorId.
     console.log(this.ideaId)
     return Ideas.findOne(this.ideaId);
+  },
+  conversationAuthor: function() {
+    // We use this helper inside the {{#each posts}} loop, so the context
+    // will be a post object. Thus, we can use this.authorId.
+    return Meteor.users.findOne(this.authorId);
   }
 })
 

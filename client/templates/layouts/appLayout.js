@@ -7,9 +7,7 @@ Template.appLayout.rendered = function() {
         .fadeIn();
     },
     removeElement: function(node) {
-      $(node).fadeOut(function() {
-        $(this).remove();
-      });
+      $(node).remove();
     }
   }
 }
