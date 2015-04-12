@@ -6,20 +6,30 @@ Meteor.publishComposite("myConversations", function() {
     ,
     children: [
       {
-        find: function(item) {
+        find: function(conversation) {
           return Meteor.users.find(
-            { _id: item.participants },
+            { _id: conversation.participants },
             { fields: { profile: 1 }
           });
         }
       },
       {
-        find: function(item) {
+        find: function(conversation) {
           return Ideas.find(
-            { _id: item.ideaId },
+            { _id: conversation.ideaId },
             { limit: 1, fields: { title: 1 }
           });
-        }
+        },
+        children: [
+          {
+            find: function(conversation, idea) {
+              return Meteor.users.find(
+                { _id: idea.userId },
+                { limit: 1, fields: { profile: 1 }
+              });
+            }
+          }
+        ]
       }
     ]
   }

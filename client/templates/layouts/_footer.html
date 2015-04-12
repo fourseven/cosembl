@@ -1,5 +1,8 @@
 <template name="_footer">
   <footer>
+    {{ #if currentUser }}
+      {{> conversationsList}}
+    {{ /if}}
     <div class="container">
       <p class="text-center text-muted">
         &copy; Copyright Cosembl
