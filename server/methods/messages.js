@@ -5,7 +5,7 @@ Meteor.methods({
       body: String,
       conversationId: String
     });
-    console.log(params)
+
     var conversation = Conversations.findOne({_id: params.conversationId, participants: this.userId});
     if (!conversation) {
       throw new Meteor.Error('invalid-conversation', "We can't find a conversation");
