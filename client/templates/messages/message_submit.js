@@ -1,10 +1,9 @@
 Template.messageSubmit.events({
   'submit form': function(e) {
-    debugger
-
     e.preventDefault();
     var message = {
-      body: $(e.target).find('[name=body]').val()
+      body: $(e.target).find('[name=body]').val(),
+      conversationId: this._id
     };
 
     var errors = validateMessage(message);
@@ -12,7 +11,7 @@ Template.messageSubmit.events({
 
     Meteor.call('Messages.insert', message, function(error, result) {
       // display the error to the user and abort
-      if (error) Errors.throw(error.reason);
+      if (error) Meteor.Error(error.reason);
     });
   }
 });

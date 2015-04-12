@@ -1,6 +1,5 @@
 Template.conversationItem.events = {
   'click .conversation': function (e, template) {
-    e.preventDefault();
     template.ready.set(false);
     Session.set('activeConversation', this._id);
   }
