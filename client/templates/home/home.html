@@ -1,54 +1,56 @@
 <template name="home">
   <div class="template-home">
     <div class="page-header">
-      <h1>Connecting people with ideas with people.</h1>
+
+      <h1>Taking scariness out of startups.</h1>
       <!-- <h3 id="learn-more"><a href="#">LEARN MORE</a></h3> -->
+      <div class="row about-blurb">
+        <div class="col-md-offset-3 col-md-6">
+
+          <div class="call-to-action">
+          <br />
+          <p>
+            Hey.
+          </p>
+          <p>
+            You with the ideas.
+            <br />
+            You with the skills.
+          </p>
+          <p>
+            I know you've got a big stack of sweet ideas.
+          </p>
+          <p>
+            But you're busy!
+            <br />
+            You can't make them happen on your own...
+          </p>
+          <p>
+            Bring them here.
+            <br />
+            Watch them attract collaborators.
+            <br />
+            Like moths to the flame.
+          </p>
+          <p>
+            Then grow them,
+            <br />
+            With your <b>Moth empire!</b>
+          </p>
+          </div>
+          {{ #if currentUser }}
+<!--               {{ #if myIdeasReady }}
+              {{ #if myIdeas }}
+              <h2>Thanks for submitting an idea, check back soon!</h2>
+              {{ else }}
+                {{> ideaSubmit }}
+              {{ /if }}
+            {{ /if }} -->
+          {{ else}}
+            {{> atForm state='signUp'}}
+          {{/if}}
+        </div>
+      </div>
     </div>
-    <!-- <div class="row">
-      <div class="col-md-6 call-to-action">
-      <br />
-      <p>
-        Hey.
-      </p>
-      <p>
-        You with the ideas.
-        <br />
-        You with the skills.
-      </p>
-      <p>
-        I know you've got a big stack of sweet ideas.
-      </p>
-      <p>
-        But you're busy!
-        <br />
-        You can't make them happen on your own...
-      </p>
-      <p>
-        Bring them here.
-        <br />
-        Watch them attract collaborators.
-        <br />
-        Like moths to the flame.
-      </p>
-      <p>
-        Then grow them,
-        <br />
-        With your <b>Moth empire!</b>
-      </p>
-      </div>
-      <div class="col-md-6">
-        {{ #if currentUser }}
-          {{ #if myIdeasReady }}
-            {{ #if myIdeas }}
-            <h2>Thanks for submitting an idea, check back soon!</h2>
-            {{ else }}
-              {{> ideaSubmit }}
-            {{ /if }}
-          {{ /if }}
-        {{ else}}
-          {{> atForm state='signUp'}}
-        {{/if}}
-      </div>
-    </div> -->
   </div>
 </template>
