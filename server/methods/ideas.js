@@ -10,6 +10,14 @@ Meteor.methods({
     var errors = validateIdea(params);
     if (errors.title) throw new Meteor.Error('invalid-idea', "You must set a title for your idea");
 
+    var ideaAlready = Ideas.findOne({title: params.title, userId: this.userId});
+    if (ideaAlready) {
+      return {
+        ideaExists: true,
+        _id: ideaAlready._id
+      }
+    }
+
     var idea = _.extend(params, {
       userId: user._id,
       author: user.profile.name,
