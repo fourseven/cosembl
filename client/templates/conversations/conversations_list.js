@@ -13,6 +13,12 @@ Template.conversationsList.helpers({
   }
 });
 
+Template.conversationsList.events ={
+  'click .close': function (e, template) {
+    Session.set('activeConversation', undefined);
+  },
+}
+
 Template.conversationsList.created = function () {
 
   // 1. Initialization

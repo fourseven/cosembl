@@ -1,9 +1,14 @@
 <template name="_footer">
-  <footer>
-    <div class="container">
-      <p class="text-center text-muted">
-        &copy; Copyright Cosembl
-      </p>
-    </div>
-  </footer>
+  <div class="footer-container">
+    {{ #if currentUser }}
+      {{> conversationsList}}
+    {{ /if}}
+    <footer>
+      <div class="container">
+        <p class="text-center text-muted">
+          &copy; Copyright Cosembl
+        </p>
+      </div>
+    </footer>
+  </div>
 </template>

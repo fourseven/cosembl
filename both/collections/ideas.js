@@ -13,3 +13,5 @@ validateIdea = function (idea) {
   if (!idea.title) errors.title = "Please fill in a title";
   return errors;
 }
+
+Ideas.initEasySearch('title');

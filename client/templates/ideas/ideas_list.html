@@ -13,16 +13,16 @@
       </div>
 
       <div class="col-md-6">
-<!--         <div class='item-box'>
+        <div class='item-box'>
           <div class='search-box'>
-            <input placeholder='Search an Idea'>
+            {{> esInput index="ideas" placeholder="Search an Idea..." allDocsOnEmpty=true }}
           </div>
         </div>
- -->        <div class="list-group item-box">
+        <div class="list-group item-box">
           <div class="wrapper">
-            {{#each ideas}}
+            {{#esEach index="ideas"}}
               {{> ideaItem}}
-            {{/each}}
+            {{/esEach}}
           </div>
         </div>
 

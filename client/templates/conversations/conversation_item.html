@@ -1,18 +1,26 @@
 <template name="conversationItem">
   <div class="conversation col-sm-2 pull-right {{selectedClass}}">
+    {{ #if activeConversation }}
+      <a href="#" class="close">X</a>
+    {{ /if }}
     <div class="conversation-title">
       {{ truncate conversationIdea.title 30 }}
-    </div>
-    <div class="conversation-author">
-      {{ conversationIdea.author }}
+      –
+      ({{ conversationIdea.author }})
     </div>
     {{#if activeConversation}}
-      {{#each messages }}
-        <p>
-         {{ body }}
-        </p>
-     {{/each}}
-     {{> messageSubmit}}
+      <hr />
+      <div class="message">
+        {{#each messages }}
+          <p>
+           {{ body }}
+           <br />
+           <small>{{firstName author}}</small>
+          </p>
+       {{/each}}
+       <hr />
+       {{> messageSubmit}}
+      </div>
    {{/if}}
   </div>
 </template>

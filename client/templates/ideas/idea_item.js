@@ -19,6 +19,8 @@ Template.ideaItem.events({
   },
   'click [data-action="start-conversation"]': function (e) {
     e.preventDefault();
-    Meteor.call('Conversations.start', this._id);
+    Meteor.call('Conversations.start', this._id, function (error, result) {
+      Session.set('activeConversation', result._id);
+    });
   }
 });

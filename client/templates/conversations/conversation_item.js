@@ -12,7 +12,7 @@ Template.conversationItem.helpers({
     return Ideas.findOne(this.ideaId);
   },
   selectedClass: function() {
-    return Session.equals('activeConversation', this._id) ? "selected" : "";
+    return Session.get('activeConversation') === this._id ? "selected" : "";
   },
   activeConversation: function() {
     return Session.equals('activeConversation', this._id);

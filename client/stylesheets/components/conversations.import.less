@@ -1,3 +1,24 @@
 .conversation.selected {
+  overflow: scroll;
+  .messages {
+    max-height: 400px;
+
+  }
+}
+
+.conversations {
+  display: flex;
+  height: 100%;
+}
+
+.conversation {
+  border: 1px solid black;
+  border-bottom: 0 none;
   background-color: white;
+  display: inline-block;
+  align-self: flex-end;
+
+  .message {
+    padding-bottom: 20px;
+  }
 }
