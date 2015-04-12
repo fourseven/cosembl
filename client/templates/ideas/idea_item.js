@@ -19,6 +19,6 @@ Template.ideaItem.events({
   },
   'click [data-action="start-conversation"]': function (e) {
     e.preventDefault();
-    Meteor.call('Conversation.start', this.userId);
+    Meteor.call('Conversations.start', this._id);
   }
 });

@@ -6,9 +6,13 @@
     {{> _header}}
   {{ /if}}
 
-  <div class="container body-container" id="#main">
+  <div class="container body-container" id="main">
     {{> yield}}
   </div>
+
+  {{ #if currentUser }}
+    {{> conversationsList}}
+  {{ /if}}
 
   {{> _footer}}
 </template>

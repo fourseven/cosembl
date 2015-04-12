@@ -1,0 +1,11 @@
+<template name="conversationsList">
+  <div class="conversations">
+    {{ #if isReady }}
+      {{#each conversations}}
+        {{ conversationIdea.title }}
+      {{/each}}
+    {{ else }}
+      LOADING CONVERSATIONS
+    {{ /if }}
+  </div>
+</template>
