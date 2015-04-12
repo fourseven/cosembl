@@ -14,7 +14,12 @@ Template.conversationsList.helpers({
 });
 
 Template.conversationsList.events ={
-  'click .close': function (e, template) {
+  'click [data-action="close"]': function (e, template) {
+    Session.set('activeConversation', undefined);
+  },
+  'click [data-action="remove"]': function (e, template) {
+    var conversationId = Session.get('activeConversation');
+    Conversations.remove({_id: conversationId});
     Session.set('activeConversation', undefined);
   },
 }

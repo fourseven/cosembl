@@ -1,7 +1,8 @@
 <template name="conversationItem">
-  <div class="conversation col-sm-2 pull-right {{selectedClass}}">
+  <div class="conversation col-sm-2 {{selectedClass}}">
     {{ #if activeConversation }}
-      <a href="#" class="close">X</a>
+      <a href="#" class="close" data-action="remove"> x </a>
+      <a href="#" class="close" data-action="close"> _ </a>
     {{ /if }}
     <div class="conversation-title">
       {{ truncate conversationIdea.title 30 }}
