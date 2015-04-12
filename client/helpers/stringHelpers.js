@@ -11,3 +11,7 @@ Template.registerHelper('pluralize', function(n, thing) {
     return n + ' ' + thing + 's';
   }
 });
+
+Template.registerHelper('firstName', function(string) {
+  return _.first(string.split(" "));
+});
