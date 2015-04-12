@@ -9,9 +9,11 @@
       <a href="#" class="light upvote {{upvotedClass}}">
         <span class='votes'>{{votes}}</span>
       </a>
+      {{#if votes }}
       <a href="#" class="star upvote {{upvotedClass}}">
         <span class='votes'>{{votes}}</span>
       </a>
+      {{/if}}
     </div>
   </div>
 </template>

@@ -5,9 +5,9 @@
         <div class='item-box'>
           <div class='item-title'><span>Filter By</span></div>
           <ul class='item-list'>
-            <li class="selected"><a href="{{ pathFor 'bestIdeas'}}">Most Popular</a></li>
-            <li><a href="{{ pathFor 'newIdeas'}}">Most Recent</a></li>
-            <li><a href="{{ pathFor 'bestIdeas'}}">In the works</a></li>
+            <li class="{{ activeRouteClass 'bestIdeas' }}"><a href="{{ pathFor 'bestIdeas'}}">Most Popular</a></li>
+            <li class="{{ activeRouteClass 'newIdeas' }}"><a href="{{ pathFor 'newIdeas'}}">Most Recent</a></li>
+            <!-- <li><a href="{{ pathFor 'bestIdeas'}}">In the works</a></li> -->
           </ul>
         </div>
       </div>
