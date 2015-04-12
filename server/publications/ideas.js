@@ -2,15 +2,14 @@ Meteor.publishComposite("ideas", function() {
   return {
     find: function() {
       return Ideas.find({});
-    }
-    // ,
-    // children: [
-    //   {
-    //     find: function(item) {
-    //       return [];
-    //     }
-    //   }
-    // ]
+    },
+    children: [
+      {
+        find: function(item) {
+          return Conversations.find({itemId: item._id, participants: this.userId}, {limit: 1});
+        }
+      }
+    ]
   }
 });
 

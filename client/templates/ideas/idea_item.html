@@ -13,8 +13,10 @@
       </a>
       {{/if}}
     </div>
-    <div class="pull-right">
-       <a href="#" data-action="start-conversation">Send mesage</a>
-    </div>
+    {{#unless conversationStarted }}
+      <div class="pull-right">
+         <a href="#" data-action="start-conversation">Send mesage</a>
+      </div>
+    {{/unless}}
   </div>
 </template>

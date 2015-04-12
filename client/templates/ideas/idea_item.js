@@ -9,6 +9,11 @@ Template.ideaItem.helpers({
     } else {
       return 'disabled';
     }
+  },
+  conversationStarted: function() {
+    // We use this helper inside the {{#each posts}} loop, so the context
+    // will be a post object. Thus, we can use this.authorId.
+    return Conversations.findOne({ideaId: this._id, participants: Meteor.userId()});
   }
 });
 
