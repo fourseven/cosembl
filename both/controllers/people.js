@@ -1,5 +1,5 @@
 PeopleListController = AppController.extend({
-  increment: 5,
+  increment: 6,
   peopleLimit: function() {
     return parseInt(this.params.peopleLimit) || this.increment;
   },

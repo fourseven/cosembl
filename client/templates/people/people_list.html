@@ -1,17 +1,30 @@
 <template name="peopleList">
   <div class="template-ideas-list">
     <div class="page-header">
-      <h1>Dashboard</h1>
+      <h1>People</h1>
     </div>
 
-    <ul class="list-group">
-      {{#each people}}
-        <li class="list-group-item">{{ profile.name }}</li>
-      {{/each}}
-    </ul>
+    <div class='row'>
+        <!-- <ul class="list-group"> -->
+          {{#each people}}
+            <div class="col-md-2 ">
+              <div class="person-profile">
+                <img src='/images/female-placeholder.png'><br>
+                {{ profile.name }}<br>
+                {{ profile.userType }}
+              </div>
+            </div>
+          {{/each}}
+
+        <!-- </ul> -->
+    </div>
 
     {{#if nextPath}}
-      <a class="load-more" href="{{nextPath}}">Load more</a>
+      <div class='row'>
+        <div class='col-md-4'></div>
+        <div class='col-md-4 btn btn-primary'><a class="load-more" href="{{nextPath}}">Load more</a></div>
+        <div class='col-md-4'></div>
+      </div>
     {{else}}
       {{#unless ready}}
         {{> spinner}}
