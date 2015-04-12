@@ -76,6 +76,9 @@ AccountsTemplates.addField({
     }, {
       text: "A Developer",
       value: "developer",
+    }, {
+      text: "A Mentor",
+      value: "mentor",
     }
   ]
 });
