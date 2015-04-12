@@ -1,0 +1,11 @@
+<template name="messageSubmit">
+  <form class="main form">
+    <div class="form-group {{errorClass 'title'}}">
+      <label class="control-label" for="title">What's your business idea?</label>
+      <div class="controls">
+          <input name="title" id="title" type="text" value="" placeholder="Say hi!" class="form-control"/>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary" />
+  </form>
+</template>

@@ -1,15 +1,8 @@
 <template name="conversationsList">
-  <div class="conversations">
+  <div class="conversations row">
     {{ #if isReady }}
       {{#each conversations}}
-      <div class="conversation">
-        <div class="conversation-title">
-          {{ truncate conversationIdea.title 30 }}
-        </div>
-        <div class="conversation-author">
-          {{ conversationAuthor.name }}
-        </div>
-      </div>
+        {{> conversationItem }}
       {{/each}}
     {{ else }}
       LOADING CONVERSATIONS

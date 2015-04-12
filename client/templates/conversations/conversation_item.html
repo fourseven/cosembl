@@ -1,0 +1,16 @@
+<template name="conversationItem">
+  <div class="conversation col-sm-2 pull-right {{selectedClass}}">
+    <div class="conversation-title">
+      {{ truncate conversationIdea.title 30 }}
+    </div>
+    <div class="conversation-author">
+      {{ conversationIdea.author }}
+    </div>
+    {{#if activeConversation}}
+      {{#each messages }}
+       A MESSAGE
+     {{/each}}
+     {{> messageSubmit}}
+   {{/if}}
+  </div>
+</template>

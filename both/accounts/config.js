@@ -1,5 +1,5 @@
 var accountsTemplate = 'marketingLayout';
-var afterSignInPath = '/';
+var afterSignInPath = '/ideas/best';
 
 AccountsTemplates.configureRoute('signIn', {
   layoutTemplate: accountsTemplate,
